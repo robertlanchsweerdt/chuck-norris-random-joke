@@ -16,12 +16,14 @@ function callJoke() {
 
         // parse xhr.responseText to object
         const data = JSON.parse(xhr.responseText);
+        // const {value:joke} = JSON.parse(xhr.responseText)
 
         // call functions
         animateChuck();
         displayJoke(data);
       } else {
         // Oh no! There has been an error with the request!
+        console.log(xhr.status, xhr.statusText);
       }
     }
   };
